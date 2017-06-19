@@ -1,10 +1,10 @@
 ## mock-hot-middleware
 
-> 服务于前后端分离的项目，提供接口数据 mock 服务的 express 中间件
+> 服务于前后端分离的项目，提供接口数据 mock 服务并支持 hot-reload 的 express 中间件
 
 ### Features
 * 配置简单，无需更改项目结构
-* mock 文件随改随生效
+* mock 文件 随改随生效
 
 ### Usage
 
@@ -26,11 +26,11 @@ app.use(mockHotMiddleware({
 ```
 ### Options
 
-* prefix/suffix: api接口前缀或后缀
+* prefix/suffix: api接口前缀或后缀
 * path: mock 文件夹
 
 ### Example
-如果你想模拟 api '/plateform/user/getUserInfo' 接口，你可以在项目目录下建立 mock 文件夹，其中 `user/getUserInfo.js` 的内容如下：
+如果你想模拟 api => '/plateform/user/getUserInfo' 接口，你可以在项目目录下建立 mock 文件夹，其中 `user/getUserInfo.js` 的内容如下：
 ```javascript
 module.exports = {
   result: "success",
@@ -47,7 +47,7 @@ module.exports = {
 or
 ```javascript
 module.exports = function(params) {
-  // 对params参数的处理
+  // 对 params 参数的处理
   return {
     result: "success",
     message: "",
