@@ -1,0 +1,29 @@
+{
+  "name": "mock-hot-middleware",
+  "version": "1.0.1",
+  "description": "为前后端分离项目提供mock服务中间件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanm1ng/mock-hot-middleware.git"
+  },
+  "keywords": [
+    "mock",
+    "webpack",
+    "middleware",
+    "express",
+    "hot-load"
+  ],
+  "author": "yanm1ng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yanm1ng/mock-hot-middleware/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
