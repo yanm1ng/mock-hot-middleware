@@ -22,8 +22,7 @@
   "bugs": {
     "url": "https://github.com/yanm1ng/mock-hot-middleware/issues"
   },
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "gulp": "^3.9.1"
   }
 }

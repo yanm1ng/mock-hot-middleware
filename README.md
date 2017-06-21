@@ -5,6 +5,7 @@
 ### Features
 * 配置简单，无需更改项目结构
 * mock 文件 随改随生效
+* 支持获取参数
 
 ### Usage
 
@@ -15,14 +16,18 @@ npm install mock-hot-middleware --save-dev
 ```
 In your express entry file:
 ```javascript
-var app = new express（）
+var express = require('express')
 var mockHotMiddleware = require('mock-hot-middleware')
+var app = new express()
 ...
 app.use(mockHotMiddleware({
   prefix: '/plateform', // prefix or suffix
   path: 'mock' // default mock
 }))
 ...
+app.listen(3000, function (err) {
+  console.log('express listening on port 3000');
+})
 ```
 ### Options
 
@@ -30,13 +35,14 @@ app.use(mockHotMiddleware({
 * path: mock 文件夹
 
 ### Example
-如果你想模拟 api => '/plateform/user/getUserInfo' 接口，你可以在项目目录下建立 mock 文件夹，其中 `user/getUserInfo.js` 的内容如下：
+如果你想模拟 api => /plateform/user/getUserInfo 接口，你可以在项目目录下建立 mock 文件夹，其中 `user/getUserInfo.js` 的内容如下：
 ```javascript
 module.exports = {
   result: "success",
   message: "",
   code: 0000,
   data: {
+    userId: 1,
     name: "yanm1ng",
     age: 21,
     address: "HangZhou",
@@ -53,11 +59,27 @@ module.exports = function(params) {
     message: "",
     code: 0000,
     data: {
+      userId: params.userId,
       name: "yanm1ng",
       age: 21,
       address: "HangZhou",
       major: "Software Engineering"
     }
+  }
+}
+```
+接着访问 http://localhost:3000/plateform/user/getUserInfo?userId=1 
+```json
+{
+  result: "success",
+  message: "",
+  code: 0000,
+  data: {
+    userId: 1,
+    name: "yanm1ng",
+    age: 21,
+    address: "HangZhou",
+    major: "Software Engineering"
   }
 }
 ```
