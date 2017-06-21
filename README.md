@@ -71,15 +71,15 @@ module.exports = function(params) {
 接着访问 http://localhost:3000/plateform/user/getUserInfo?userId=1 
 ```json
 {
-  result: "success",
-  message: "",
-  code: 0000,
-  data: {
-    userId: 1,
-    name: "yanm1ng",
-    age: 21,
-    address: "HangZhou",
-    major: "Software Engineering"
+  "result": "success",
+  "message": "",
+  "code": 0000,
+  "data": {
+    "userId": 1,
+    "name": "yanm1ng",
+    "age": 21,
+    "address": "HangZhou",
+    "major": "Software Engineering"
   }
 }
 ```
